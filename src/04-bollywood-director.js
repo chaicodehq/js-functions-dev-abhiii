@@ -46,10 +46,37 @@
  */
 export function createDialogueWriter(genre) {
   // Your code here
+  const checkGenre = ["action", "romance", "comedy", "drama"]
+  if(checkGenre.findIndex(x => x === genre) === -1)
+    return null
+
+  return ((hero, villain)=>{
+    if(!hero || !villain)
+      return "...";
+    else if(genre === "action"){
+      return `${hero} says: 'Tujhe toh main dekh lunga, ${villain}!'`
+    }
+    else if(genre === "romance"){
+      return `${hero} whispers: '${villain}, tum mere liye sab kuch ho'`
+    }else if(genre === "comedy"){
+      return `${hero} laughs: '${villain} bhai, kya kar rahe ho yaar!'`
+    }else if(genre === "drama"){
+      return `${hero} cries: '${villain}, tune mera sab kuch cheen liya!'`
+    }
+  })
+
 }
 
 export function createTicketPricer(basePrice) {
   // Your code here
+  return((seatType, isWeekend) =>{
+    const price = basePrice;
+    
+    if(isWeekend){
+
+    }
+  })
+
 }
 
 export function createRatingCalculator(weights) {
